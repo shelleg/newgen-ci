@@ -1,0 +1,11 @@
+---
+
+- hosts: localhost
+  become: true
+  vars:
+    proxy_server: 127.0.0.1
+  roles:
+    - role: squid
+    - role: oracle-java
+    - role: custom-jenkins
+      cj_set_proxy: true

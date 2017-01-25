@@ -1,0 +1,5 @@
+.idea/
+log/ansible.log
+.vagrant/
+galaxy-roles/*
+playbooks/*.retry
