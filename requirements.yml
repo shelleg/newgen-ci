@@ -12,6 +12,6 @@
   version: ostkl
   name: custom-jenkins
 
-- src: https://github.com/shelleg/ansible-nexus3-oss.git
-  version: dev
+- src: https://github.com/chrislevi/ansible-nexus3-oss.git
+  version: master
   name: nexus

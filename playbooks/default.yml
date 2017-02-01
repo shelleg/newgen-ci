@@ -5,7 +5,9 @@
   vars:
     proxy_server: 127.0.0.1
   roles:
-    - role: squid
     - role: oracle-java
+    - role: nexus
+      tags: nexus
     - role: custom-jenkins
-      cj_set_proxy: true
+      cj_set_proxy: false
+      tags: jenkins
