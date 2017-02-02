@@ -1,0 +1,71 @@
+# ------------------------------------------ JUSEPPE --------------------------------------------- #
+juseppe_host_port: 9090
+juseppe_docker_host_ip: localhost
+juseppe_cert_dir: /var/lib/juseppe
+juseppe_cert_file: uc.crt
+juseppe_plugin_cache_dir: /var/cache/juseppe
+
+# ------------------------------------------ JENKINS -------------------------------------------- #
+# Juseppe config
+cj_juseppe_url: 'http://{{ juseppe_docker_host_ip }}:{{ juseppe_host_port }}'
+cj_juseppe: true
+
+cj_set_proxy: false
+cj_install_online_mode: true
+cj_channel: latest-LTS # could be latest || latest-LTS
+cj_version: '2.32'
+
+# Nexus config
+cj_nexus: true
+cj_nexus_ip: ''
+cj_nexus_port: '8081'
+cj_nexus_url: 'http://{{ cj_nexus_ip }}:{{ cj_nexus_port }}'
+cj_nexus_mirror: 'repository/jenkins-mirror'
+cj_nexus_updates: 'repository/jenkins-updates'
+cj_cli_hostname: 'localhost'
+
+cj_theme_color: amber
+
+# Categories:
+cj_wizard: true
+cj_theme: true
+cj_setup_matrix_auth_strategy: true
+cj_setup_dsl_plugins: true
+cj_goodies: true
+cj_base: true
+cj_github: true
+cj_blueocean: true
+cj_pipeline: true
+cj_workflow: true
+cj_seed_demo: true
+
+# ------------------------------------------ GITLAB -------------------------------------------- #
+#
+#
+#
+# ------------------------------------------ NEXUS -------------------------------------------- #
+nexus_admin_password: 'changeme' # Note : admin password change subsequent to first-time install is *not implemented* yet
+nexus_anonymous_access: true
+
+# repo triggers
+nexus_config_pypi: false
+nexus_config_docker: false
+nexus_config_raw: true
+nexus_config_rubygems: false
+nexus_config_bower: false
+nexus_config_npm: false
+
+# RAW repo config
+nexus_repos_raw_proxy:
+  - name: jenkins-mirror
+    remote_url: 'http://mirrors.jenkins-ci.org/'
+  - name: jenkins-updates
+    remote_url: 'http://updates.jenkins-ci.org/'
+  - name: ubuntu-archive
+    remote_url: 'http://archive.ubuntu.com/ubuntu/dists/'
+
+nexus_repos_raw_group:
+  - name: raw-all
+    member_repos:
+      - jenkins-mirror
+      - ubuntu-archive

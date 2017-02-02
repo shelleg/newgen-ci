@@ -4,8 +4,12 @@
   become: true
   vars:
     proxy_server: 127.0.0.1
+    cj_nexus_ip: "{{ ansible_eth0.ipv4.address }}"
   roles:
-    - role: squid
     - role: oracle-java
-    - role: custom-jenkins
-      cj_set_proxy: true
+    - role: nexus-modified
+      tags: nexus
+    - role: simple-docker-daemon
+    - role: juseppe
+    - role: custom-jenkins-modified
+#
