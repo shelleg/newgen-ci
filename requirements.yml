@@ -9,9 +9,17 @@
   name: squid
 
 - src: https://github.com/shelleg/ansible-role-custom-jenkins.git
-  version: ostkl
+  version: ostkl-nexus
   name: custom-jenkins
 
 - src: https://github.com/chrislevi/ansible-nexus3-oss.git
   version: master
   name: nexus
+
+- src: https://github.com/shelleg/ansible-role-juseppe.git
+  version: master
+  name: juseppe
+
+- src: https://github.com/shelleg/ansible-role-simple-docker-daemon.git
+  version: master
+  name: simple-docker-daemon
