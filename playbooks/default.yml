@@ -7,9 +7,8 @@
     cj_nexus_ip: "{{ ansible_eth0.ipv4.address }}"
   roles:
     - role: oracle-java
-    - role: nexus-modified
+    - role: nexus
       tags: nexus
     - role: simple-docker-daemon
     - role: juseppe
-    - role: custom-jenkins-modified
-#
+    - role: custom-jenkins
