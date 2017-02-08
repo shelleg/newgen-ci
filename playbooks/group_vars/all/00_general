@@ -24,6 +24,33 @@ cj_nexus_mirror: 'repository/jenkins-mirror'
 cj_nexus_updates: 'repository/jenkins-updates'
 cj_cli_hostname: 'localhost'
 
+cj_home: /var/lib/jenkins
+cj_log_dir: /var/log/jenkins
+cj_cache_dir: /var/cache/jenkins
+cj_init_dir: "{{ cj_home }}/init.groovy.d"
+cj_update_dir: "{{ cj_home }}/updates"
+cj_webroot: /var/cache/jenkins/war
+cj_plugins_tmp_folder: /tmp/plugins
+cj_usercont_dir: "{{ cj_home }}/userContent"
+cj_uc_json: "/tmp/default.json"
+
+cj_runas: false
+cj_custom_user: jenkins
+cj_custom_group: jenkins
+cj_runas_user: "{{ cj_custom_user | d('jenkins') }}"
+cj_runas_group: "{{ cj_custom_group | d('jenkins') }}"
+cj_runas_sudoer: true
+
+cj_allow_anon_read: true
+cj_basic_auth: true
+cj_local_admin_users:
+  - { username: admin, password: admin }
+  - { username: jjb, password: jjb }
+
+cj_local_regular_users:
+  - { username: user1, password: user1 }
+  - { username: user2, password: user2 }
+
 cj_theme_color: amber
 
 # Categories:
@@ -43,6 +70,14 @@ cj_seed_demo: true
 #
 #
 #
+#------------------------------------------- SEED VARS -----------------------------------------#
+seed_work_dir: '/opt/tikal'
+seed_deploy_dir: '{{ seed_work_dir }}/deploy'
+seed_sanjer: '' # SET SANJER IP
+
+seed_job_list:
+  - seed
+  - pipe
 # ------------------------------------------ NEXUS -------------------------------------------- #
 nexus_admin_password: 'changeme' # Note : admin password change subsequent to first-time install is *not implemented* yet
 nexus_anonymous_access: true
@@ -69,3 +104,4 @@ nexus_repos_raw_group:
     member_repos:
       - jenkins-mirror
       - ubuntu-archive
+      - jenkins-updates
