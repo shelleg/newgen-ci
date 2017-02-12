@@ -14,6 +14,15 @@ Java 1.8.X
 * **Juseppe** - Jenkins custom onpremise update-Center for customized plugin sets
 * **Jenkins** - customed Jenkins setup based on Vanilla Jenkins (v2.32) Offline installation supported via Nexus
 
+**HOW TO**
+======================================================
+* Clone this git repo to /opt `git clone git@github.com:Chrislevi/newgen-ci.git /opt`
+* Run `ansible-galaxy install -r requirements.yml`
+* Configure setup via `playbooks/group_vars/all/{00_general,10_plugins}`
+* Place your ssh key into your GitHub account
+* run `ansible-playbook playbooks/default.yml`
+* Browse localhost:8080 , Login! WOALLA! 
+
 **Variables & Defaults**
 ================================
 * `seed_sanjer: ''` - **MUST** be filled with the correct 'sanjer' IP 
@@ -126,11 +135,4 @@ Java 1.8.X
     juseppe_cert_dir: /var/lib/juseppe
     juseppe_plugin_cache_dir: /var/cache/juseppe
 ```
-**HOW TO**
-======================================================
-* Clone this git repo to /opt `git clone git@github.com:Chrislevi/newgen-ci.git /opt`
-* Run `ansible-galaxy install -r requirements.yml`
-* Configure setup via `playbooks/group_vars/all/{00_general,10_plugins}`
-* Place your ssh key into your GitHub account
-* run `ansible-playbook playbooks/default.yml`
-* Browse localhost:8080 , Login! WOALLA! 
+
