@@ -73,7 +73,7 @@ cj_seed_demo: true
 #------------------------------------------- SEED VARS -----------------------------------------#
 seed_work_dir: '/opt/tikal'
 seed_deploy_dir: '{{ seed_work_dir }}/deploy'
-seed_sanjer: '10.0.10.1' # SET SANJER IP
+seed_sanjer: '' # SET SANJER IP
 
 seed_job_list:
   - seed
