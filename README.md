@@ -10,9 +10,9 @@ Java 1.8.X
 
 **FEATURES**
 ================================
-**Nexus** - Binary repository (apt, .hpi, docker-registry, caching)
-**Juseppe** - Jenkins custom onpremise update-Center for customized plugin sets
-**Jenkins** - customed Jenkins setup based on Vanilla Jenkins (v2.32) Offline installation supported via Nexus
+* **Nexus** - Binary repository (apt, .hpi, docker-registry, caching)
+* **Juseppe** - Jenkins custom onpremise update-Center for customized plugin sets
+* **Jenkins** - customed Jenkins setup based on Vanilla Jenkins (v2.32) Offline installation supported via Nexus
 
 **Variables & Defaults**
 ================================
@@ -24,10 +24,10 @@ Java 1.8.X
 *  Jenkins directories used thought the role
 
 ** Triggers ** - Groupvars
-`cj_juseppe: true` - Juseppe integration with Jenkins
-`cj_install_online_mode` - Off/Online installion flow
-`cj_nexus: true` - Nexus integration with Juseppe/Jenkins
-`cj_seed_demo: true` - Runs the default job 'seed' post-installation
+* `cj_juseppe: true` - Juseppe integration with Jenkins
+* `cj_install_online_mode` - Off/Online installion flow
+* `cj_nexus: true` - Nexus integration with Juseppe/Jenkins
+* `cj_seed_demo: true` - Runs the default job 'seed' post-installation
 
 ```yamlex
     cj_home: /var/lib/jenkins                          # the default home directory just like the apt/rpm
