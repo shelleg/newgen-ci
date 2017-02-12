@@ -17,7 +17,7 @@ cj_version: '2.32'
 
 # Nexus config
 cj_nexus: true
-cj_nexus_ip: ''
+cj_nexus_ip: 'localhost'
 cj_nexus_port: '8081'
 cj_nexus_url: 'http://{{ cj_nexus_ip }}:{{ cj_nexus_port }}'
 cj_nexus_mirror: 'repository/jenkins-mirror'
@@ -73,7 +73,7 @@ cj_seed_demo: true
 #------------------------------------------- SEED VARS -----------------------------------------#
 seed_work_dir: '/opt/tikal'
 seed_deploy_dir: '{{ seed_work_dir }}/deploy'
-seed_sanjer: '' # SET SANJER IP
+seed_sanjer: '10.0.10.1' # SET SANJER IP
 
 seed_job_list:
   - seed
