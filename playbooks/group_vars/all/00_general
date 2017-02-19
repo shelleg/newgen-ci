@@ -97,11 +97,22 @@ nexus_repos_raw_proxy:
   - name: jenkins-updates
     remote_url: 'http://updates.jenkins-ci.org/'
   - name: ubuntu-archive
-    remote_url: 'http://archive.ubuntu.com/ubuntu/dists/'
+    remote_url: 'http://archive.ubuntu.com/ubuntu/'
+  - name: ubuntu-security
+    remote_url: 'http://security.ubuntu.com/ubuntu'
+  - name: ubuntu-openstack
+    remote_url: 'http://ubuntu-cloud.archive.canonical.com/ubuntu'
+  - name: ubuntu-galera
+    remote_url: 'http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu'
+  - name: ubuntu-mongodb
+    remote_url: 'http://repo.mongodb.org/apt/ubuntu'
 
 nexus_repos_raw_group:
   - name: raw-all
     member_repos:
       - jenkins-mirror
+      - ubuntu-security
       - ubuntu-archive
-      - jenkins-updates
+      - ubuntu-openstack
+      - ubuntu-galera
+      - ubuntu-mongodb
