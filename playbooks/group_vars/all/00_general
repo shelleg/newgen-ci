@@ -82,13 +82,20 @@ seed_job_list:
 nexus_admin_password: 'changeme' # Note : admin password change subsequent to first-time install is *not implemented* yet
 nexus_anonymous_access: true
 
+# Nexus restore procedure:
+# run ansible-playbook playbook/default.yml -t nexus_restore -e "nexus_restore_point=(# date of choice -> %y-%m-%d #)"
+# nexus_restore_point: '17-02-22' # Example format
+
+# Nexus purge procedure:
+# run ansible-playbook example.yml -e "purge=true"
+
 # repo triggers
-nexus_config_pypi: false
-nexus_config_docker: false
+nexus_config_pypi: true
+nexus_config_docker: true
 nexus_config_raw: true
-nexus_config_rubygems: false
-nexus_config_bower: false
-nexus_config_npm: false
+nexus_config_rubygems: true
+nexus_config_bower: true
+nexus_config_npm: true
 
 # RAW repo config
 nexus_repos_raw_proxy:
@@ -111,6 +118,7 @@ nexus_repos_raw_group:
   - name: raw-all
     member_repos:
       - jenkins-mirror
+      - jenkins-updates
       - ubuntu-security
       - ubuntu-archive
       - ubuntu-openstack
