@@ -1,0 +1,21 @@
+---
+- name: "Install Apache2"
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+  - apache2
+
+- name: "Deploy HTTP Accessed files"
+  template:
+    src: "{{ item }}.j2"
+    dest: "/var/www/html/{{ item }}"
+  with_items:
+  - sources.list
+  - daemon.json
+  - pip.conf
+
+- name: "Restart apache service"
+  service:
+    name: apache2
+    state: restarted
