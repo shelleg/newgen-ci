@@ -1,0 +1,7 @@
+{
+  "insecure-registries": [
+    "{{ cj_nexus_ip }}:{{ nexus_repos_docker_hosted[0].http_port }}",
+    "{{ cj_nexus_ip }}:{{ nexus_repos_docker_proxy[0].http_port }}"
+  ],
+  "disable-legacy-registry": true
+}

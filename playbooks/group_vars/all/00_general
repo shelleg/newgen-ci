@@ -82,6 +82,41 @@ seed_job_list:
 nexus_admin_password: 'changeme' # Note : admin password change subsequent to first-time install is *not implemented* yet
 nexus_anonymous_access: true
 
+#nexus_version: '3.2.1-01'
+#nexus_package: "nexus-{{ nexus_version }}-unix.tar.gz"
+#nexus_download_dir: '/tmp'
+nexus_backup_dir: '/var/nexus-backup'
+#nexus_os_group: 'nexus'
+#nexus_os_user: 'nexus'
+#nexus_installation_dir: '/opt'
+#nexus_data_dir: '/var/nexus'
+#nexus_timezone: 'UTC' # java timezone
+#nexus_tmp_dir: '/tmp/nexus'
+#nexus_script_dir: '{{ nexus_installation_dir }}/nexus-latest/etc/scripts'
+#nexus_restore_log: '/var/log/nexus-restore.log'
+#nexus_backup_log: '/var/log/nexus-backup.log'
+
+nexus_default_port: 8081
+nexus_default_context_path: '/'
+
+nexus_repos_docker_hosted:
+  - name: docker-hosted
+    http_port: 9080
+    v1_enabled: True
+
+nexus_repos_docker_proxy:
+  - name: docker-proxy
+    http_port: 9081
+    v1_enabled: True
+    index_type: "HUB"
+    proxy_url: "https://registry-1.docker.io"
+    use_nexus_certificates_to_access_index: false
+
+nexus_repos_docker_group:
+  - name: docker-group
+    http_port: 9082
+    v1_enabled: True
+
 # Nexus restore procedure:
 # run ansible-playbook playbook/default.yml -t nexus_restore -e "nexus_restore_point=(# date of choice -> %y-%m-%d #)"
 # nexus_restore_point: '17-02-22' # Example format
@@ -93,9 +128,9 @@ nexus_anonymous_access: true
 nexus_config_pypi: true
 nexus_config_docker: true
 nexus_config_raw: true
-nexus_config_rubygems: true
-nexus_config_bower: true
-nexus_config_npm: true
+nexus_config_rubygems: false
+nexus_config_bower: false
+nexus_config_npm: false
 
 # RAW repo config
 nexus_repos_raw_proxy:
